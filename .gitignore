@@ -25,5 +25,4 @@ Thumbs.db
 *.pyc
 
 # Static/media (if auto-generated)
-staticfiles/
 media/
