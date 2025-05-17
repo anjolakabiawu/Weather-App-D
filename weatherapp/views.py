@@ -30,13 +30,13 @@ def home(request):
         day = datetime.date.today()
 
         # Only run Google search if city is valid
-        API_KEY = config('GOOGLE_API_KEY')
-        SEARCH_ENGINE_ID = config('GOOGLE_SEARCH_ENGINE_ID')
+        GOOGLE_API_KEY = config('GOOGLE_API_KEY')
+        GOOGLE_SEARCH_ENGINE_ID = config('GOOGLE_SEARCH_ENGINE_ID')
         query = f"{city} city skyline wallpaper"
         page = 1
         start = (page - 1) * 10 + 1
         searchType = 'image'
-        city_url = f"https://www.googleapis.com/customsearch/v1?key={API_KEY}&cx={SEARCH_ENGINE_ID}&q={query}&start={start}&searchType={searchType}&imgSize=xlarge"
+        city_url = f"https://www.googleapis.com/customsearch/v1?key={GOOGLE_API_KEY}&cx={GOOGLE_SEARCH_ENGINE_ID}&q={query}&start={start}&searchType={searchType}&imgSize=xlarge"
 
         data = requests.get(city_url).json()
         count = 1
